@@ -1,1 +1,12 @@
 /* Name: Tyler Harbert */
+
+body {
+    background-image: url("../assets/images/bg-image.avif");
+}
+
+section {
+    background-color: rgba(255, 255, 255, .7);
+    width: fit-content;
+    padding: 1rem 3%;
+    border-radius: 10px;
+}
