@@ -1,12 +1,38 @@
-/* Name: Tyler Harbert */
-
 body {
-    background-image: url("../assets/images/bg-image.avif");
+    background-color: rgba(185, 244, 191, 0.8);
+    font-family: 'Lato';
 }
 
-section {
-    background-color: rgba(255, 255, 255, .7);
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
     width: fit-content;
     padding: 1rem 3%;
-    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    background-color: rgba(237, 232, 208, 1);
+    border-radius: 7px;
+    border: 1px solid black;
+}
+
+.username,
+.email,
+.password,
+.verify-password {
+    margin: 1rem 0;
+    display: flex;
+}
+
+
+.container .text {
+    margin-bottom: 2rem;
+    font-weight: bold;
+    font-size: x-large;
 }
