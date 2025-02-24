@@ -3,25 +3,25 @@
 <?php require("../includes/header.php"); ?>
 
 <section class="container">
-    <div class="text">
-        Join us at Used Book Exchange:
-    </div>
+    <h2>Join us at Used Book Exchange:</h2>
+    <h4>Please enter the following information: </h4>
     <form>
         <div class="username">
-            <label>Username: <input> </label>
+            <label>Username: </label>
+            <input required>
 
         </div>
         <div class="email">
             <label>Email: </label>
-            <input type="email">
+            <input type="email" required>
         </div>
         <div class="password">
             <label>Password: </label>
-            <input type="password">
+            <input type="password" required>
         </div>
         <div class="verify-password">
             <label>Verify Password: </label>
-            <input type="password">
+            <input type="password" required>
         </div>
     </form>
 
