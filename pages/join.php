@@ -5,7 +5,7 @@
 <section class="container">
     <h2>Join us at Used Book Exchange:</h2>
     <h4>Please enter the following information: </h4>
-    <form>
+    <form method="GET" action="./join.php">
         <div class="username">
             <label>Username: </label>
             <input required>
@@ -23,6 +23,12 @@
             <label>Verify Password: </label>
             <input type="password" required>
         </div>
+        <div class="buttons">
+            <button type="submit">Join</button>
+            <button type="reset">Reset</button>
+        </div>
     </form>
 
 </section>
+
+<?php require("../includes/footer.php");

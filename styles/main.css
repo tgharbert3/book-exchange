@@ -24,6 +24,9 @@ main {
     border: 1px solid black;
 }
 
+form {
+    width: 100%;
+}
 
 label {
     display: inline-block;
@@ -44,6 +47,17 @@ input {
 .password,
 .verify-password {
     margin: 1rem 0;
+}
+
+.buttons {
+    text-align: center;
+    padding-left: 5%;
+}
+
+button {
+    width: 25%;
+    background-color: rgba(237, 232, 208, 1);
+    border: 1px solid black;
 }
 
 
