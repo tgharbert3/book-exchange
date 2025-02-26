@@ -12,6 +12,21 @@ main {
     height: 90vh;
 }
 
+aside {
+    position: absolute;
+    left: 125px;
+    align-self: flex-start;
+
+}
+
+aside ul {
+    display: flex;
+}
+
+aside ul li:not(:last-child)::after {
+    content: "/";
+}
+
 .container {
     width: fit-content;
     padding: 1rem 3%;
@@ -65,4 +80,8 @@ button {
     margin-bottom: 2rem;
     font-weight: bold;
     font-size: x-large;
+}
+
+footer {
+    text-align: center;
 }
