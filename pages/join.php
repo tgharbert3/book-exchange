@@ -2,29 +2,32 @@
 
 <?php require("../includes/header.php"); ?>
 
-
+<?php require("../../secure_conn.php"); ?>
 <?php
 if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
     if (!empty($_POST['username'])) {
-        $username = $_POST['username'];
+        $username = trim($_POST['username']);
     } else {
         $missing['username'] = "Username is required";
     }
 
-    if (!empty($_POST["email"])) {
-        $email = $_POST["email"];
-    } else {
+    $valid_email = filter_var(trim($_POST["email"]), FILTER_VALIDATE_EMAIL);
+    if (empty($_POST["email"])) {
         $missing["email"] = "Email is required";
+    } elseif (!$valid_email) {
+        $missing["email"] = "Please enter a valid email";
+    } else {
+        $email = $valid_email;
     }
 
     if (!empty($_POST["password"])) {
-        $password = $_POST['password'];
+        $password = trim($_POST['password']);
     } else {
         $missing["password"] = "A password is required";
     }
 
     if (!empty($_POST["verify-password"])) {
-        $verify_password = $_POST['verify-password'];
+        $verify_password = trim($_POST['verify-password']);
 
     } else {
         $missing["verify-password"] = "Verify Password is required";
@@ -32,6 +35,39 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
 
     if ($password !== $verify_password) {
         $missing['not_matching'] = "Passwords do not match";
+    }
+
+    try {
+        require_once '../../../pdo_connect.php';
+        $sql = "SELECT * FROM ube_users WHERE email = :emailaddr";
+        $stmt = $dbc->prepare($sql);
+        $stmt->bindParam(':emailaddr', $email);
+        $stmt->execute();
+        $numRows = $stmt->rowCount();
+        if ($numRows >= 1) {
+            $missing['exists'] = "That email already exists";
+        }
+
+        if (!$missing) {
+            $sql2 = "INSERT INTO ube_users (email, pword, username) VALUES(?,?,?)";
+            $stmt2 = $dbc->prepare($sql2);
+            $pw_hash = password_hash($password, PASSWORD_DEFAULT);
+            $stmt2->bindParam(1, $email);
+            $stmt2->bindParam(2, $pw_hash);
+            $stmt2->bindParam(3, $username);
+            $stmt2->execute();
+            $numRows = $stmt2->rowCount();
+            if ($numRows != 1) {
+                echo "<h2>We are unable to process your request at  this  time. Please try again later.</h2>";
+            } else {
+
+                header('Location: ./home.php');
+            }
+            include '../includes/footer.php';
+            exit;
+        }
+    } catch (Exception $e) {
+        echo $e->getMessage();
     }
 }
 ?>
