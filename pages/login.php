@@ -51,6 +51,12 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
 }
 ?>
 
+<aside>
+    <ul>
+        <li>Home</li>
+        <li>Login</li>
+    </ul>
+</aside>
 <section class="container">
 
     <h2>Join us at Used Book Exchange:</h2>
