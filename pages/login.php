@@ -1,5 +1,6 @@
 <!-- Name: Tyler Harbert -->
 <?php session_start(); ?>
+<?php require("../../secure_conn.php"); ?>
 <?php require '../includes/header.php' ?>
 <?php
 
