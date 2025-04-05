@@ -1,5 +1,5 @@
 <!-- Name: Tyler Harbert -->
-
+<?php require("../../reg_conn.php"); ?>
 <?php require("../includes/home-header.php") ?>
 <div class="wrapper">
     <section id="welcome" class="textbox">
