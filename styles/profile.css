@@ -1,0 +1,39 @@
+body {
+    background-color: rgba(185, 244, 191, 0.8);
+    font-family: 'Lato';
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 100vh;
+}
+
+h1 {
+    align-self: center;
+    margin-bottom: 3%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10%;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+form h2 {
+    width: 33%;
+    align-self: center;
+}
+
+form input {
+    width: 25%;
+}
+
+footer {
+    text-align: center;
+}
