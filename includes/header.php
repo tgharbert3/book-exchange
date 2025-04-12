@@ -15,7 +15,7 @@
     if ($currentPage == 'login.php' || $currentPage == 'join.php' || $currentPage == 'logged_out.php') {
         echo "<link rel='stylesheet' href='../styles/main.css'>";
     } elseif ($currentPage == 'profile.php') {
-        echo "<link rel='stylesheet' href=../styles/profile.css'>";
+        echo "<link rel='stylesheet' href='../styles/profile.css'>";
     }
     ?>
 
