@@ -10,7 +10,15 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="../styles/main.css">
+    <?php $currentPage = basename($_SERVER['SCRIPT_FILENAME']);
+
+    if ($currentPage == 'login.php' || $currentPage == 'join.php' || $currentPage == 'logged_out.php') {
+        echo "<link rel='stylesheet' href='../styles/main.css'>";
+    } elseif ($currentPage == 'profile.php') {
+        echo "<link rel='stylesheet' href=../styles/profile.css'>";
+    }
+    ?>
+
     <link rel="stylesheet" href="../styles/nav.css">
 </head>
 

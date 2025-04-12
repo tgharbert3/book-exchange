@@ -39,6 +39,8 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
                 //your code here
                 session_start();
                 $_SESSION['logged_in'] = 'logged_in';
+                $_SESSION['email'] = $email;
+                $_SESSION['username'] = $result['username'];
                 header('Location: ./home.php');
                 exit;
             } else {

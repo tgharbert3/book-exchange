@@ -60,7 +60,8 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
             if ($numRows != 1) {
                 echo "<h2>We are unable to process your request at  this  time. Please try again later.</h2>";
             } else {
-
+                session_start();
+                $_SESSION['email'] = $email;
                 header('Location: ./home.php');
             }
             include '../includes/footer.php';
