@@ -8,32 +8,31 @@ body {
 main {
     display: flex;
     flex-direction: column;
+    align-items: center;
     flex: 1;
-    height: 100vh;
-}
-
-h1 {
-    align-self: center;
-    margin-bottom: 3%;
+    height: 90vh;
 }
 
 form {
+    width: 50%;
     display: flex;
     flex-direction: column;
-    margin-left: 10%;
-    margin-top: 0;
-    margin-bottom: 0;
+    align-items: center;
 }
 
 form h2 {
-    width: 33%;
-    align-self: center;
+    text-align: center;
 }
 
 form input {
-    width: 25%;
+    width: 50%;
+}
+
+form #submit {
+    width: 10%;
 }
 
 footer {
     text-align: center;
+    background-color: rgba(237, 232, 208, 1);
 }
