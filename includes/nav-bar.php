@@ -7,6 +7,8 @@
     <div class="nav-right">
         <li><a href="../pages/search.php">Search</a></li>
         <?php if (isset($_SESSION['logged_in'])) {
+            echo '<li><a href="../pages/book_upload.php"';
+            echo '> Add Book</a></li>';
             echo '<li><a href="../pages/profile.php"';
             echo '> Profile</a></li>';
             echo '<li><a href="../pages/logged_out.php"';

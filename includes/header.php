@@ -16,6 +16,8 @@
         echo "<link rel='stylesheet' href='../styles/main.css'>";
     } elseif ($currentPage == 'profile.php') {
         echo "<link rel='stylesheet' href='../styles/profile.css'>";
+    } elseif ($currentPage == 'book_upload.php') {
+        echo "<link rel='stylesheet' href='../styles/book_upload.css'>";
     }
     ?>
 
