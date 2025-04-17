@@ -41,7 +41,9 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
                 $_SESSION['logged_in'] = 'logged_in';
                 $_SESSION['email'] = $email;
                 $_SESSION['username'] = $result['username'];
-                $_SESSION['uid'] = $result['id'];
+                echo $result['username'];
+                $_SESSION['uid'] = $result['user_id'];
+                echo $_SESSION['uid'];
                 header('Location: ./home.php');
                 exit;
             } else {
