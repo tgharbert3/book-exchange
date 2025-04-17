@@ -1,8 +1,5 @@
 <?php session_start();
 require '../includes/header.php';
-//TODO 
-//Add Succesfully upload page
-//Add sucessfullly deleted page
 
 if (isset($_POST['submit']) && $_POST['submit'] == "Add Book") {
     if (!empty($_POST['title']) && !empty($_POST['author']) && !empty($_POST['cond'])) {
@@ -20,12 +17,12 @@ if (isset($_POST['submit']) && $_POST['submit'] == "Add Book") {
         $stmt->execute();
         $numRows = $stmt->rowCount();
         if ($numRows == 1) {
-            echo "<div> 
+            echo '<section style="text-align:center";>' . "
                 You Sucessfully uploaded: <br />
                 Title: $title <br />
                 Author: $author <br />
                 Condition: $condition <br />
-            </div>";
+            </section>";
         }
     }
     include '../includes/footer.php';
@@ -41,19 +38,15 @@ if (isset($_POST['submit']) && $_POST['submit'] == "Delete") {
     $stmt->execute();
     $numRows = $stmt->rowCount();
     if ($numRows == 1) {
-        echo "<div> 
-                You Sucessfully Deleted <br />
-            </div>";
-    };
+       echo '<section style="text-align:center">' . "You succesfully removed a book from your list</section>"; 
+    }
     include '../includes/footer.php';
     exit;
 }
-
 ?>
 
 <?php
 require_once '../../../pdo_connect.php';
-
 $user_id = $_SESSION['uid'];
 $sql = "SELECT * FROM ube_books WHERE uid = $user_id";
 $result = $dbc->query($sql);
@@ -112,7 +105,6 @@ $result = $dbc->query($sql);
                 <?php } ?>
             </ul> 
     </div>
-    <br>
 </section>
 
 <?php include '../includes/footer.php'; ?>
