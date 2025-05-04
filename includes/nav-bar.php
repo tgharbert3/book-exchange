@@ -5,7 +5,7 @@
         <li><a href="../pages/home.php">Used Book Exchange</a></li>
     </div>
     <div class="nav-right">
-        <li><a href="../pages/search.php">Search</a></li>
+        <li><a href="../pages/search.php?type=title">Search</a></li>
         <?php if (isset($_SESSION['logged_in'])) {
             echo '<li><a href="../pages/book_upload.php"';
             echo '> Add / View</a></li>';

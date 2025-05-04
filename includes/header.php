@@ -19,6 +19,9 @@
     } elseif ($currentPage == 'book_upload.php') {
         echo "<link rel='stylesheet' href='../styles/book_upload.css'>";
     }
+    elseif ($currentPage == 'search.php') {
+        echo "<link rel='stylesheet' href='../styles/search.css'>";
+    }
     ?>
 
     <link rel="stylesheet" href="../styles/nav.css">
