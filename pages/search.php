@@ -74,7 +74,8 @@
     if ($result) {
         echo '<h3> Results: </h3>';
         if (!$_SESSION['username']) {
-            echo '<p style="margin-left: 3%; margin-bottom: 0; font-weight: bold;" >Must be signed in to exhange books</hp>';
+            echo '<p style="margin-left: 3%; margin-bottom: 0; font-weight: bold;">Must be signed in to exchange books</p>';
+
         }
         ?>
         <section class="results">
@@ -88,8 +89,10 @@
                             echo "Title: " . $row['title'] . "</br> Author: " . $row['author'] . "</br> Condition: " . $row['cond'];
                         } ?>
                         <?php if ($_SESSION['username']) { ?>
-                            <form>
+                            <form action="cart.php" method="POST">
                                 <input type="submit" name="cart" value="Add to Cart">
+                                <input type="hidden" name="action" value="add">
+                                <input type="hidden" name="book_id" value="<?= $row['book_id'] ?>">
                             </form>
                         <?php } ?>
                     </li>
@@ -101,8 +104,10 @@
                         <?php foreach ($result as $row) {
                             echo "Title: " . $row['title'] . "</br> Author: " . $row['author'] . "</br> Condition: " . $row['cond'] . "</br>"; ?>
                             <?php if ($_SESSION['username']) { ?>
-                                <form>
+                                <form action="cart.php" method="POST">
                                     <input type="submit" name="cart" value="Add to Cart">
+                                    <input type="hidden" name="action" value="add">
+                                    <input type="hidden" name="book_id" value="<?= $row['book_id'] ?>">
                                 </form>
                             <?php } else {
                                 echo '</br>';

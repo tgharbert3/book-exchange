@@ -58,19 +58,18 @@ if (isset($_SESSION['email'])) {
 }
 
 ?>
-
-<form action="profile.php" method="POST">
-    <h2>Update Information: </h2>
-    <label for="newUsername" class="username">Username: </label>
-    <input type="text" name="newUsername" class="username">
-    <br>
-    <label for="newEmail" class="email">Email: </label>
-    <input type="text" name="newEmail" class="email">
-
-
-    <br>
-    <input type="submit" name="Submit" id="submit">
-</form>
+<section class="container">
+    <form action="profile.php" method="POST">
+        <h2>Update Information: </h2>
+        <label for="newUsername" class="username">Username: </label>
+        <input type="text" name="newUsername" class="username">
+        <br>
+        <label for="newEmail" class="email">Email: </label>
+        <input type="text" name="newEmail" class="email">
+        <br>
+        <input type="submit" name="Submit" id="submit">
+    </form>
+</section>
 
 
 <?php

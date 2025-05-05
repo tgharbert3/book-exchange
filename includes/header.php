@@ -18,9 +18,10 @@
         echo "<link rel='stylesheet' href='../styles/profile.css'>";
     } elseif ($currentPage == 'book_upload.php') {
         echo "<link rel='stylesheet' href='../styles/book_upload.css'>";
-    }
-    elseif ($currentPage == 'search.php') {
+    } elseif ($currentPage == 'search.php') {
         echo "<link rel='stylesheet' href='../styles/search.css'>";
+    } elseif ($currentPage == 'cart.php') {
+        echo "<link rel='stylesheet' href='../styles/cart_view.css'>";
     }
     ?>
 

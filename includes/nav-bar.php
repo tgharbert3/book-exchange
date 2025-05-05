@@ -1,5 +1,4 @@
 <?php session_start() ?>
-
 <ul class="nav">
     <div class="nav-left">
         <li><a href="../pages/home.php">Used Book Exchange</a></li>
@@ -11,6 +10,8 @@
             echo '> Add / View</a></li>';
             echo '<li><a href="../pages/profile.php"';
             echo '> Profile</a></li>';
+            echo '<li><a href="../pages/cart.php?action=show_cart"';
+            echo '> Cart</a></li>';
             echo '<li><a href="../pages/logged_out.php"';
             echo '> Logout</a></li>';
 

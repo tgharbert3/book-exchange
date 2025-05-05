@@ -83,5 +83,11 @@ button {
 }
 
 footer {
+    background-color: rgba(237, 232, 208, 1);
     text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    border: 1px solid black;
 }

@@ -1,4 +1,5 @@
 <!-- Name: Tyler Harbert -->
+<?php session_start() ?>
 <?php require("../../reg_conn.php"); ?>
 <?php require("../includes/home-header.php") ?>
 <div class="wrapper">

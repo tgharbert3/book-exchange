@@ -38,7 +38,7 @@ if (isset($_POST['submit']) && $_POST['submit'] == "Delete") {
     $stmt->execute();
     $numRows = $stmt->rowCount();
     if ($numRows == 1) {
-       echo '<section style="text-align:center">' . "You succesfully removed a book from your list</section>"; 
+        echo '<section style="text-align:center">' . "You succesfully removed a book from your list</section>";
     }
     include '../includes/footer.php';
     exit;
@@ -47,7 +47,7 @@ if (isset($_POST['submit']) && $_POST['submit'] == "Delete") {
 
 <?php
 require_once '../../../pdo_connect.php';
-$user_id = $_SESSION['uid'];
+$user_id = $_SESSION['user_id'];
 $sql = "SELECT * FROM ube_books WHERE uid = $user_id";
 $result = $dbc->query($sql);
 ?>
@@ -81,13 +81,13 @@ $result = $dbc->query($sql);
         <div class="section_header">
             My Listed Books
         </div>
-        
-            <ul class="book_list">
-                <?php foreach ($result as $row) {
-                    $title = $row['title'];
-                    $author = $row['author'];
-                    $condition = $row['cond'];
-                    $bookID = $row['book_id'];
+
+        <ul class="book_list">
+            <?php foreach ($result as $row) {
+                $title = $row['title'];
+                $author = $row['author'];
+                $condition = $row['cond'];
+                $bookID = $row['book_id'];
                 ?>
                 <li>
                     <div class="list_label">Author:</div> <?= $author ?>
@@ -98,12 +98,12 @@ $result = $dbc->query($sql);
                     <div>
                         <form action="book_upload.php" method="POST">
                             <input type="submit" name="submit" value="Delete">
-                            <input type="hidden" name="book_id" value="<?=$bookID ?>">
+                            <input type="hidden" name="book_id" value="<?= $bookID ?>">
                         </form>
                     </div>
                 </li>
-                <?php } ?>
-            </ul> 
+            <?php } ?>
+        </ul>
     </div>
 </section>
 

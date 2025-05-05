@@ -42,6 +42,7 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
                 $_SESSION['email'] = $email;
                 $_SESSION['username'] = $result['username'];
                 $_SESSION['uid'] = $result['user_id'];
+                $_SESSION['user_id'] = $result['user_id'];
                 header('Location: ./home.php');
                 exit;
             } else {
